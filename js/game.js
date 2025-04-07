@@ -619,4 +619,261 @@ Semua mengangguk, bersiap pada posisi masing-masing. Jax menatap Lia sesaat, mel
   bab7_tangkap_victor: {
     text: `"Victor adalah kuncinya," kata Jax tegas. "Kita tangkap dia, paksa dia menghentikan semuanya."
 
-Lia mengangguk, dari balik jaketnya ia mengeluarkan pistol kecil—senjata cadangan yang ia sembunyikan. "Ik
+    Lia mengangguk, dari balik jaketnya ia mengeluarkan pistol kecil—senjata cadangan yang ia sembunyikan. "Ikuti aku, kita harus cepat."
+
+    Mereka berdua bergerak hati-hati mendekati Victor yang masih tergeletak di tanah, berusaha untuk bangkit. Jax menendang pistol yang terjatuh dari tangan Victor, memastikan pria itu tidak bisa melawan.
+
+    "Kau tidak akan bisa melarikan diri kali ini, Victor," kata Jax, menatap tajam ke arah Victor.
+
+    "Kau pikir kau bisa menghentikanku? Morgan akan datang dan menghancurkan kalian semua!" Victor berusaha bangkit, tetapi Jax menekannya kembali ke tanah.
+
+    "Kau akan memberitahu kami di mana Morgan berada dan menghentikan rencana ini!" desak Jax.
+
+    Victor, terengah-engah, akhirnya mengakui, "Baiklah! Dia akan berada di dermaga belakang dalam waktu lima belas menit. Dia tidak akan membiarkan senjata itu jatuh ke tangan kalian!"
+
+    Jax menatap Lia, "Kita harus segera ke dermaga belakang. Kita tidak punya waktu untuk membuang-buang waktu."
+
+    Lia mengangguk, "Ayo, kita harus menghentikan Morgan sebelum terlambat."`,
+    choices: [
+      { text: 'Kejar Morgan', next: 'bab8_kejar_morgan', action: () => { state.foughtBoss = true; } },
+      { text: 'Tanya lebih lanjut tentang rencana Morgan', next: 'bab8_tanya_rencana', action: () => { state.friendship += 1; } }
+    ]
+  },
+  bab8_kejar_morgan: {
+    text: `Jax dan Lia berlari menuju dermaga belakang, mengikuti petunjuk Victor. Di sepanjang jalan, mereka melihat sisa-sisa pertempuran antara Fist dan Crimson Raven, dengan suara tembakan dan teriakan yang menggema di udara malam.
+
+    Saat mereka tiba di dermaga, mereka melihat truk besar yang dimaksud Victor, dikelilingi oleh beberapa pengawal bersenjata.
+
+    "Kita harus mengalihkan perhatian mereka," kata Jax. "Lia, kau ambil posisi di sebelah kiri, aku akan dari kanan."
+
+    Dengan strategi yang telah disepakati, mereka melancarkan serangan bersamaan. Jax menembakkan senapan semi-otomatisnya ke arah pengawal, sementara Lia menggunakan kecepatan dan kelincahannya untuk menghindari tembakan dan mendekati truk.
+
+    Dalam kekacauan, mereka berhasil menjatuhkan beberapa pengawal, tetapi Morgan masih berada di dalam truk, mengawasi situasi.
+
+    "Kita harus menghentikannya sebelum dia bisa melarikan diri," kata Lia, berusaha menembus pertahanan pengawal yang tersisa.
+
+    "Ayo, kita tidak punya waktu!" Jax berteriak, memacu semangat Lia untuk terus maju.`,
+    choices: [
+      { text: 'Serang pengawal yang tersisa', next: 'bab8_serang_pengawal', action: () => { state.friendship += 1; } },
+      { text: 'Coba negosiasi dengan Morgan', next: 'bab8_negosiasi_morgan', action: () => { state.romance += 1; } }
+    ]
+  },
+  bab8_tanya_rencana: {
+    text: `Jax menatap Victor dengan tajam. "Sebelum kita pergi, kau harus memberi tahu kami lebih banyak tentang rencana Morgan."
+
+    Victor, terdesak, menghela napas. "Baiklah, aku akan memberitahumu. Morgan berencana untuk mengirimkan senjata biologis ke kliennya malam ini. Dia tidak akan membiarkan siapapun menghalanginya."
+
+    "Di mana dia akan melakukan pengiriman itu?" tanya Lia, berusaha mendapatkan informasi lebih lanjut.
+
+    "Di dermaga belakang, di truk putih besar. Dia akan mengawasi pengiriman itu sendiri," jawab Victor, terlihat putus asa.
+
+    "Kita harus segera ke sana," kata Jax, menatap Lia. "Kita tidak punya waktu untuk membuang-buang waktu."
+
+    Lia mengangguk, "Ayo, kita harus menghentikan Morgan sebelum terlambat."`,
+    choices: [
+      { text: 'Kejar Morgan', next: 'bab8_kejar_morgan', action: () => { state.foughtBoss = true; } },
+      { text: 'Tanya lebih lanjut tentang rencana Morgan', next: 'bab8_tanya_rencana', action: () => { state.friendship += 1; } }
+    ]
+  },
+  bab8_serang_pengawal: {
+    text: `Jax dan Lia melancarkan serangan ke pengawal yang tersisa. Dengan tembakan yang terarah, Jax berhasil menjatuhkan satu pengawal, sementara Lia dengan cepat menghindari serangan dan menendang pengawal lainnya.
+
+    "Kita harus cepat!" teriak Jax, melihat Morgan masih berada di dalam truk.
+
+    Mereka berdua berlari menuju truk, tetapi Morgan sudah bersiap untuk melarikan diri. Jax melompat ke atas truk, berusaha membuka pintu.
+
+    "Morgan! Hentikan!" teriak Jax, tetapi Morgan sudah memutar kunci kontak dan truk mulai bergerak.
+
+    Lia berlari ke samping truk, berusaha untuk menghentikannya. "Jax, aku butuh bantuan!"`,
+    choices: [
+      { text: 'Lompat ke dalam truk', next: 'bab9_lompat_truk', action: () => { state.friendship += 1; } },
+      { text: 'Coba blokir jalan', next: 'bab9_blokir_jalan', action: () => { state.romance += 1; } }
+    ]
+  },
+  bab8_negosiasi_morgan: {
+    text: `Jax mencoba untuk bernegosiasi dengan Morgan. "Kau tidak perlu melakukan ini, Morgan. Kita bisa menyelesaikannya dengan cara yang lebih baik."
+
+    Morgan menatap Jax dengan sinis. "Kau tidak mengerti, Jax. Ini bukan hanya tentang uang. Ini tentang kekuasaan."
+
+    "Kau akan kehilangan segalanya jika kau melanjutkan rencana ini," kata Lia, berusaha meyakinkan Morgan.
+
+    "Kau pikir aku takut pada ancaman kosong? Aku sudah terlalu jauh terlibat," jawab Morgan, bersikeras.
+
+    "Tapi kau bisa menghentikan semua ini," Jax mendesak. "Bergabunglah dengan kami, dan kita bisa menghentikan kekacauan ini."`,
+    choices: [
+      { text: 'Tawarkan kesepakatan', next: 'bab9_tawarkan_kesepakatan', action: () => { state.friendship += 1; } },
+      { text: 'Tanya tentang rencana lebih lanjut', next: 'bab9_tanya_rencana', action: () => { state.romance += 1; } }
+    ]
+  },
+  bab9_lompat_truk: {
+    text: `Jax melompat ke dalam truk, berusaha mengendalikan kemudi. "Hentikan truk ini, Morgan!" teriaknya.
+
+    Morgan berusaha melawan, tetapi Jax berhasil mengunci lengannya. "Kau tidak akan bisa melarikan diri!"
+
+    Dengan usaha keras, Jax berhasil menghentikan truk di tengah jalan. Lia berlari mendekat, siap untuk membantu.
+
+    "Kita harus menghubungi pihak berwenang sekarang!" kata Lia, melihat situasi yang semakin genting.`,
+    choices: [
+      { text: 'Hubungi polisi', next: 'bab10_hubungi_polisi', action: () => { state.friendship += 2; } },
+      { text: 'Bawa Morgan pergi', next: 'bab10_bawa_morgan', action: () => { state.romance += 1; } }
+    ]
+  },
+  bab9_blokir_jalan: {
+    text: `Jax dan Lia berusaha memblokir jalan dengan kendaraan lain. Mereka berhasil menghentikan truk, tetapi Morgan sudah bersiap untuk melawan.
+
+    "Kau tidak akan bisa menghentikanku!" teriak Morgan, berusaha melarikan diri.
+
+    Jax dan Lia bersiap untuk menghadapi Morgan, bertekad untuk menghentikan rencana jahatnya.`,
+    choices: [
+      { text: 'Serang Morgan', next: 'bab10_serang_morgan', action: () => { state.friendship += 1; } },
+      { text: 'Coba negosiasi lagi', next: 'bab10_negosiasi_lagi', action: () => { state.romance += 1; } }
+    ]
+  },
+  bab9_tawarkan_kesepakatan: {
+    text: `Jax menawarkan kesepakatan kepada Morgan. "Bergabunglah dengan kami, dan kita bisa menghentikan kekacauan ini."
+
+    Morgan terlihat ragu. "Apa yang kau tawarkan?"
+
+    "Kami bisa melindungimu dari konsekuensi. Kita bisa bekerja sama untuk menghentikan jaringan ini," jawab Jax.
+
+    Lia menambahkan, "Kau bisa mendapatkan kembali kepercayaan publik jika kau membantu kami."
+
+    Morgan berpikir sejenak, tetapi kemudian menjawab, "Aku tidak bisa mempercayai kalian."`,
+    choices: [
+      { text: 'Tanya lebih lanjut tentang rencana', next: 'bab10_tanya_rencana', action: () => { state.friendship += 1; } },
+      { text: 'Tawarkan perlindungan', next: 'bab10_tawarkan_perlindungan', action: () => { state.romance += 1; } }
+    ]
+  },
+  bab10_hubungi_polisi: {
+    text: `Jax segera menghubungi pihak berwenang. "Kami memiliki informasi tentang pengiriman senjata biologis. Kami butuh bantuan segera!"
+
+    Pihak berwenang merespons dengan cepat, mengirimkan tim untuk menangkap Morgan dan pengawalnya.
+
+    "Kau tidak akan bisa melarikan diri kali ini, Morgan," kata Jax, menatap tajam.
+
+    Morgan terlihat putus asa saat polisi tiba dan menangkapnya. "Kau akan menyesal, Jax!" teriaknya saat dibawa pergi.
+
+    Lia menatap Jax, "Kita berhasil."`,
+    choices: [
+      { text: 'Rayakan kemenangan', next: 'bab11_rayakan_kemenangan', action: () => { state.friendship += 2; } },
+      { text: 'Rencanakan langkah selanjutnya', next: 'bab11_rencanakan_langkah', action: () => { state.romance += 1; } }
+    ]
+  },
+  bab10_bawa_morgan: {
+    text: `Jax dan Lia membawa Morgan pergi dari tempat itu, berusaha untuk menghindari perhatian pihak berwenang.
+
+    "Kau tidak bisa melarikan diri dariku, Morgan," kata Jax, menatap tajam.
+
+    Morgan terlihat putus asa, tetapi Jax dan Lia bertekad untuk menghentikan rencana jahatnya.
+
+    "Kita harus segera pergi sebelum mereka menemukan kita," kata Lia, melihat ke sekeliling dengan cemas.`,
+    choices: [
+      { text: 'Bawa Morgan ke tempat aman', next: 'bab11_bawa_ke_tempat_aman', action: () => { state.friendship += 2; } },
+      { text: 'Serahkan Morgan ke pihak berwenang', next: 'bab11_serahkan_ke_pihak_berwenang', action: () => { state.romance += 1; } }
+    ]
+  },
+  bab10_serang_morgan: {
+    text: `Jax dan Lia menyerang Morgan, berusaha untuk menghentikannya. Dalam perkelahian sengit, mereka berhasil menjatuhkan Morgan.
+
+    "Hentikan semua ini, Morgan!" teriak Jax, menahan pria itu di tanah.
+
+    Morgan, terdesak, akhirnya mengakui, "Baiklah! Aku akan menghentikan rencana ini."
+
+    Jax dan Lia menatap satu sama lain, menyadari bahwa mereka telah berhasil menghentikan rencana jahat Morgan.`,
+    choices: [
+      { text: 'Hubungi pihak berwenang', next: 'bab11_hubungi_pihak_berwenang', action: () => { state.friendship += 2; } },
+      { text: 'Bawa Morgan pergi', next: 'bab11_bawa_morgan', action: () => { state.romance += 1; } }
+    ]
+  },
+  bab10_negosiasi_lagi: {
+    text: `Jax mencoba untuk bernegosiasi lagi dengan Morgan. "Kau bisa menghentikan semua ini. Kami bisa membantumu."
+
+    Morgan terlihat ragu, tetapi Jax dan Lia berusaha meyakinkannya.
+
+    "Kau bisa mendapatkan kembali kepercayaan publik jika kau membantu kami," kata Lia.
+
+    Morgan akhirnya setuju untuk bekerja sama, dan mereka segera menghubungi pihak berwenang untuk menangkap jaringan kriminal yang lebih besar.`,
+    choices: [
+      { text: 'Rayakan kemenangan', next: 'bab11_rayakan_kemenangan', action: () => { state.friendship += 2; } },
+      { text: 'Rencanakan langkah selanjutnya', next: 'bab11_rencanakan_langkah', action: () => { state.romance += 1; } }
+    ]
+  },
+  bab11_rayakan_kemenangan: {
+    text: `Setelah berhasil menghentikan rencana Morgan, Jax dan Lia merayakan kemenangan mereka bersama anggota Fist lainnya.
+
+    "Kita berhasil!" teriak Jax, mengangkat gelasnya.
+
+    "Untuk keadilan!" balas Lia, tersenyum lebar.
+
+    Mereka semua bersorak, merayakan keberhasilan mereka dalam menghentikan kekacauan yang hampir terjadi di kota.
+
+    "Ini baru permulaan," kata Jax, menatap Lia. "Kita harus terus berjuang untuk keadilan."`,
+    choices: [
+      { text: 'Akhiri cerita', next: 'end' },
+      { text: 'Rencanakan langkah selanjutnya', next: 'bab11_rencanakan_langkah', action: () => { state.romance += 1; } }
+    ]
+  },
+  bab11_rencanakan_langkah: {
+    text: `Jax dan Lia berkumpul dengan anggota Fist lainnya untuk merencanakan langkah selanjutnya.
+
+    "Kita harus memastikan tidak ada lagi jaringan kriminal yang bisa mengancam kota ini," kata Jax.
+
+    Lia mengangguk, "Kita bisa mulai dengan menyelidiki lebih dalam tentang koneksi Morgan dan Victor."
+
+    Mereka semua setuju untuk bekerja sama dan melanjutkan perjuangan mereka demi keadilan di kota.
+
+    "Bersiaplah, karena ini baru permulaan," kata Jax, penuh semangat.`,
+    choices: [
+      { text: 'Akhiri cerita', next: 'end' }
+    ]
+  },
+  end: {
+    text: `Cerita ini berakhir di sini. Jax dan Lia melanjutkan perjuangan mereka untuk keadilan, berkomitmen untuk melindungi kota dari ancaman yang akan datang. 
+    Terima kasih telah bermain!`,
+    choices: []
+  }
+};
+
+// Fungsi untuk menyimpan dan memuat state permainan
+function saveGame() {
+  localStorage.setItem(SAVE_KEY, JSON.stringify(state));
+}
+
+function loadGame() {
+  const savedState = localStorage.getItem(SAVE_KEY);
+  if (savedState) {
+    Object.assign(state, JSON.parse(savedState));
+  }
+}
+
+// Fungsi untuk memulai permainan
+function startGame() {
+  loadGame();
+  displayScene(state.currentScene);
+}
+
+// Fungsi untuk menampilkan scene
+function displayScene(sceneKey) {
+  const scene = scenes[sceneKey];
+  console.log(scene.text);
+  scene.choices.forEach((choice, index) => {
+    console.log(`${index + 1}. ${choice.text}`);
+  });
+}
+
+// Fungsi untuk memilih pilihan
+function choose(choiceIndex) {
+  const scene = scenes[state.currentScene];
+  const choice = scene.choices[choiceIndex - 1];
+  if (choice) {
+    state.currentScene = choice.next;
+    choice.action && choice.action();
+    saveGame();
+    displayScene(state.currentScene);
+  } else {
+    console.log("Pilihan tidak valid.");
+  }
+}
+
+// Memulai permainan
+startGame();
