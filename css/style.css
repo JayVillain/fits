@@ -1,52 +1,137 @@
-body {
-    background: #111;
-    color: #eee;
-    font-family: 'Segoe UI', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+/* ==============================
+   Variables & Reset
+   ============================== */
+   :root {
+    --bg-color:      #111;
+    --game-bg:       #222;
+    --text-color:    #eee;
+    --accent-color:  #5a9;
+    --accent-hover:  #6ab;
+    --btn-bg:        #444;
+    --btn-hover:     #555;
+    --ctrl-bg:       #333;
+    --ctrl-hover:    #444;
+    --font-family:   'Segoe UI', sans-serif;
+    --radius-lg:     8px;
+    --radius-sm:     4px;
+  }
+  
+  * {
+    box-sizing: border-box;
     margin: 0;
+    padding: 0;
   }
-  #game {
-    width: 600px;
+  
+  body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
     padding: 20px;
-    background: #222;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.7);
   }
+  
+  /* ==============================
+     Container Game
+     ============================== */
+  #game {
+    width: 100%;
+    max-width: 700px;
+    background: var(--game-bg);
+    padding: 30px;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+  }
+  
+  /* ==============================
+     Tombol Mulai
+     ============================== */
+  #startBtn {
+    display: block;
+    margin: 0 auto 20px auto;
+    padding: 14px 28px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--bg-color);
+    background: var(--accent-color);
+    border: none;
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  #startBtn:hover {
+    background: var(--accent-hover);
+  }
+  
+  /* ==============================
+     Teks Narasi
+     ============================== */
   #text {
     white-space: pre-wrap;
-    line-height: 1.5;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    min-height: 150px;
   }
+  
+  /* ==============================
+     Pilihan (Choices)
+     ============================== */
   button.choice {
     display: block;
+    width: 100%;
     margin: 10px 0;
     padding: 12px;
-    width: 100%;
-    background: #444;
-    color: #eee;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+    background: var(--btn-bg);
+    color: var(--text-color);
     font-size: 1rem;
+    text-align: left;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background 0.2s;
   }
   button.choice:hover {
-    background: #555;
+    background: var(--btn-hover);
   }
+  
+  /* ==============================
+     Kontrol Save / Load
+     ============================== */
   #controls {
-    margin-top: 20px;
+    margin-top: 30px;
     text-align: center;
   }
   #controls button {
     margin: 0 8px;
-    padding: 8px 16px;
-    background: #333;
-    color: #eee;
+    padding: 10px 18px;
+    font-size: 0.95rem;
+    background: var(--ctrl-bg);
+    color: var(--text-color);
     border: none;
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
     cursor: pointer;
+    transition: background 0.2s;
   }
   #controls button:hover {
-    background: #444;
+    background: var(--ctrl-hover);
   }
+  
+  /* ==============================
+     Responsive
+     ============================== */
+  @media (max-width: 600px) {
+    #game {
+      padding: 20px;
+    }
+    #startBtn {
+      width: 100%;
+      font-size: 1rem;
+    }
+    button.choice {
+      font-size: 0.95rem;
+    }
+  }
+  

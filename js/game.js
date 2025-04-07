@@ -852,28 +852,37 @@ function startGame() {
   displayScene(state.currentScene);
 }
 
-// Fungsi untuk menampilkan scene
+// Ambil elemen DOM
+const startBtn   = document.getElementById('startBtn');
+const textEl     = document.getElementById('text');
+const choicesEl  = document.getElementById('choices');
+
+// Event: klik tombol Mulai
+startBtn.addEventListener('click', () => {
+  startBtn.style.display = 'none';
+  startGame();
+});
+
+// Render scene ke halaman
 function displayScene(sceneKey) {
   const scene = scenes[sceneKey];
-  console.log(scene.text);
-  scene.choices.forEach((choice, index) => {
-    console.log(`${index + 1}. ${choice.text}`);
+  // tampilkan teks
+  textEl.textContent = scene.text;
+  // bersihkan pilihan lama
+  choicesEl.innerHTML = '';
+  // buat tombol pilihan baru
+  scene.choices.forEach(choice => {
+    const btn = document.createElement('button');
+    btn.className = 'choice';
+    btn.textContent = choice.text;
+    btn.addEventListener('click', () => {
+      state.currentScene = choice.next;
+      choice.action && choice.action();
+      saveGame();
+      displayScene(state.currentScene);
+    });
+    choicesEl.appendChild(btn);
   });
 }
 
-// Fungsi untuk memilih pilihan
-function choose(choiceIndex) {
-  const scene = scenes[state.currentScene];
-  const choice = scene.choices[choiceIndex - 1];
-  if (choice) {
-    state.currentScene = choice.next;
-    choice.action && choice.action();
-    saveGame();
-    displayScene(state.currentScene);
-  } else {
-    console.log("Pilihan tidak valid.");
-  }
-}
-
-// Memulai permainan
-startGame();
+// NOTE: Jangan panggil startGame() di sini—game hanya dimulai lewat tombol
